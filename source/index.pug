@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/style.css")
+        link(href="css/normalize.css", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Montserrat:600,800,900|Space+Mono:400,700" rel="stylesheet")
+        title Brutalist Buildings
+        script(src="https://d3js.org/d3.v3.min.js")
+        script(src="https://d3js.org/d3.geo.projection.v0.min.js")
+        script(src="https://d3js.org/topojson.v0.min.js")
+        script(src="js/gRanger.min.js")
+    
+    body
+        .menu
+            .menu__burger
+            .menu__hopf
+                p(style="margin-bottom: 40px; line-height: 1.6;") Thanks for the data <a href="http://www.sosbrutalism.org/cms/15802395" target="">#SOSBRUTALISM</a>
+                a.menu__kopf__ref-link(href="" target="") Github source
+                //- a.menu__kopf__ref-link(href="" target="") Brutalist map breakdown
+            .menu__keller
+                p Made by <a href="https://pavellaptev.github.io" target="">Pavel Laptev</a>
+                p(style="font-size: 14px") v1.0.0, 2019
+
+        .tooltip
+            .tooltip__vorschau
+                .tooltip__vorschau__image
+            .tooltip__inhalt
+                .tooltip__status
+                .tooltip__titel
+                .tooltip__autor
+                .tooltip__jahr-staat
+
+        .wrap
+            .header
+                .header__titel <span>BRUTALISM</span>Karte
+                .header__untertitel Timeline-Karte. Rettet die Betonmonster.
+                    //- span.header__anzahl 
+            .slider
+            #map
+
+    script(src="js/main.bundle.js")
+    

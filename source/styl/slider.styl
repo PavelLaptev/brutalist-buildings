@@ -1,0 +1,184 @@
+.noUi-target
+    z-index: 999
+    position absolute
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 0
+    width: 84%
+    background: linear-gradient(90deg,
+    $clr-1920-1930 5%, 
+    $clr-1930-1935 10%, 
+    $clr-1935-1940 15%, 
+    $clr-1940-1945 20%, 
+    $clr-1945-1950 25%, 
+    $clr-1950-1955 30%, 
+    $clr-1955-1960 35%, 
+    $clr-1960-1965 40%, 
+    $clr-1965-1970 45%, 
+    $clr-1970-1975 50%, 
+    $clr-1975-1980 55%, 
+    $clr-1980-1985 60%, 
+    $clr-1985-1990 65%, 
+    $clr-1990-1995 70%, 
+    $clr-1995-2000 75%, 
+    $clr-2000-2005 80%, 
+    $clr-2005-2010 85%, 
+    $clr-2010-2015 90%, 
+    $clr-2015-- 95%)
+    &:before
+        position: absolute
+        top: -20px
+        left: -52px
+        content: "jars"
+        font-family: 'Montserrat', sans-serif
+        font-weight: bold
+        font-size: 14px
+        @media screen and (max-width: $tablet-size)
+            display: none
+
+.noUi-base,
+.noUi-connects
+    width 100%
+    height 100%
+    position relative
+    z-index 1
+
+.noUi-connects
+    z-index 0
+
+.noUi-origin
+    will-change transform
+    position absolute
+    z-index 1
+    top 0
+    left 0
+    height 100%
+    width 100%
+    transform-origin 0 0
+
+html
+    &:not([dir="rtl"])
+        .noUi-horizontal
+            .noUi-origin
+                left auto
+                right 0
+            .noUi-handle
+                right -17px
+                left auto
+
+.noUi-horizontal
+    height 14px
+    .noUi-origin
+        height 0
+    .noUi-handle
+        width 32px
+        height 28px
+        left -17px
+        top -48px
+        cursor: ew-resize
+        &:after
+            position: absolute
+            bottom: -12px
+            left: 50%
+            transform: translateX(-50%) rotate(45deg)
+            content: ""
+            display: block
+            width: 22px
+            height: 22px
+            background: #000
+        &:before
+            content: ""
+            position: absolute
+            bottom: -40px
+            left: 50%
+            transform: translateX(-50%)
+            background: #000
+            display: block
+            width: 4px
+            height: 28px
+    .noUi-tooltip
+        transform translate(-50%, 0)
+        left 50%
+        bottom 120%
+
+.noUi-handle
+    position absolute
+    background #000
+    cursor default
+    &:focus
+        outline: none
+
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin
+    transition transform 0.3s
+
+.noUi-connect
+    will-change transform
+    position absolute
+    z-index 1
+    bottom 0
+    left 0
+    height 6px
+    width 100%
+    transform-origin 0 0
+    background rgba(0,0,0,1)
+
+.noUi-draggable
+    cursor ew-resize
+
+.noUi-pips-horizontal
+    padding 10px 0
+    height 80px
+    top 100%
+    left 0
+    width 100%
+
+.noUi-value-horizontal
+    transform translate(-50%, 50%)
+
+.noUi-rtl
+    .noUi-value-horizontal
+        transform translate(50%, 50%)
+
+.noUi-marker-horizontal
+    &.noUi-marker
+        margin-left -1px
+        width 2px
+        height 5px
+    &.noUi-marker-sub
+        height 10px
+    &.noUi-marker-large
+        height 15px
+
+.noUi-pips-vertical
+    padding 0 10px
+    height 100%
+    top 0
+    left 100%
+
+.noUi-value-vertical
+    transform translate(0, -50%, 0)
+    padding-left 25px
+
+.noUi-marker-vertical
+    &.noUi-marker
+        width 5px
+        height 2px
+        margin-top -1px
+    &.noUi-marker-sub
+        width 10px
+    &.noUi-marker-large
+        width 15px
+
+.noUi-tooltip
+    display block
+    position absolute
+    background #fff
+    color #000
+    text-align center
+    white-space nowrap
+    font-family: 'Space Mono', monospace
+    font-weight: bold
+    font-size: 17px
+    &:focus
+        outline: none

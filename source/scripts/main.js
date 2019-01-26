@@ -1,4 +1,5 @@
 import noUiSlider from "noUiSlider";
+import menuActions from "./utils/menuActions";
 import { fillDots } from "./utils/fillDots";
 import { range } from "./utils/generateArray";
 

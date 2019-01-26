@@ -1,6 +1,5 @@
 import noUiSlider from "noUiSlider";
 import { fillDots } from "./utils/fillDots";
-import menuActions from "./utils/menuActions";
 import { range } from "./utils/generateArray";
 
 const slider = document.querySelector(".slider");
@@ -50,14 +49,14 @@ const tooltip = d3.select(".tooltip");
 const dotCounter = d3.select(".header__anzahl");
 
 // load and display the World
-d3.json("../json/world-110m2.json", (error, topology) => {
+d3.json("brutalist-buildings/json/world-110m2.json", (error, topology) => {
     g.selectAll("path")
         .data(topojson.object(topology, topology.objects.countries).geometries)
         .enter()
         .append("path")
         .attr("d", path);
 
-    d3.json("../json/brut-data.json", (error, data) => {
+    d3.json("brutalist-buildings/json/brut-data.json", (error, data) => {
         g.selectAll("circle")
             .data(data)
             .enter()

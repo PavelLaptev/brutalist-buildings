@@ -46,17 +46,16 @@ const rectSizeOne = {
 };
 
 const tooltip = d3.select(".tooltip");
-const dotCounter = d3.select(".header__anzahl");
 
 // load and display the World
-d3.json("/json/world-110m2.json", (error, topology) => {
+d3.json("../json/world-110m2.json", (error, topology) => {
     g.selectAll("path")
         .data(topojson.object(topology, topology.objects.countries).geometries)
         .enter()
         .append("path")
         .attr("d", path);
 
-    d3.json("/json/brut-data.json", (error, data) => {
+    d3.json("../json/brut-data.json", (error, data) => {
         g.selectAll("circle")
             .data(data)
             .enter()

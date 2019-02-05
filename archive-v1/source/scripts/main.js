@@ -1,5 +1,4 @@
 import noUiSlider from "noUiSlider";
-import menuActions from "./utils/menuActions";
 import { fillDots } from "./utils/fillDots";
 import { range } from "./utils/generateArray";
 
@@ -42,8 +41,8 @@ const g = svg.append("g");
 
 // Rect sizeы
 const rectSizeOne = {
-    w: 32,
-    h: 6
+    w: 22,
+    h: 8
 };
 
 const tooltip = d3.select(".tooltip");
@@ -57,8 +56,6 @@ d3.json("js/world-110m2.json", (error, topology) => {
         .attr("d", path);
 
     d3.json("js/brut-data.json", (error, data) => {
-        d3.select(".header__anzahl").text(`${data.length} Gebäude`);
-
         g.selectAll("circle")
             .data(data)
             .enter()

@@ -39,3 +39,45 @@ export const fillDots = year => {
         return "city-dot cd-2015--";
     }
 };
+
+export const DotsColorByClass = classList => {
+    if (classList.contains("cd-1920-1930")) {
+        return "#ffc64c";
+    } else if (classList.contains("cd-1930-1935")) {
+        return "#ffbc4d";
+    } else if (classList.contains("cd-1935-1940")) {
+        return "#ffb251";
+    } else if (classList.contains("cd-1940-1945")) {
+        return "#ffa758";
+    } else if (classList.contains("cd-1945-1950")) {
+        return "#ff9c62";
+    } else if (classList.contains("cd-1950-1955")) {
+        return "#ff906e";
+    } else if (classList.contains("cd-1955-1960")) {
+        return "#ff857c";
+    } else if (classList.contains("cd-1960-1965")) {
+        return "#ff7b8b";
+    } else if (classList.contains("cd-1965-1970")) {
+        return "#ff729c";
+    } else if (classList.contains("cd-1970-1975")) {
+        return "#ff6bae";
+    } else if (classList.contains("cd-1975-1980")) {
+        return "#ff67c0";
+    } else if (classList.contains("cd-1980-1985")) {
+        return "#a459f2";
+    } else if (classList.contains("cd-1985-1990")) {
+        return "#7e54f8";
+    } else if (classList.contains("cd-1990-1995")) {
+        return "#0065e4";
+    } else if (classList.contains("cd-1995-2000")) {
+        return "#0077d0";
+    } else if (classList.contains("cd-2000-2005")) {
+        return "#0088bd";
+    } else if (classList.contains("cd-2005-2010")) {
+        return "#009aa9";
+    } else if (classList.contains("cd-2010-2015")) {
+        return "#00ab95";
+    } else if (classList.contains("cd-2015--")) {
+        return "#00bd82";
+    }
+};

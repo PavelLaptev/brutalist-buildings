@@ -1,17 +1,17 @@
 import noUiSlider from "noUiSlider";
 import menuActions from "./utils/menuActions";
-import { fillDots } from "./utils/fillDots";
+import { fillDots, DotsColorByClass } from "./utils/fillDots";
 import { range } from "./utils/generateArray";
 
 const slider = document.querySelector(".slider");
 
 noUiSlider.create(slider, {
-    start: [1920, 2018],
+    start: [1920, 2019],
     connect: true,
     step: 1,
     range: {
         min: 1920,
-        max: 2018
+        max: 2019
     },
     tooltips: true,
     format: {
@@ -42,7 +42,7 @@ const g = svg.append("g");
 
 // Rect sizeы
 const rectSizeOne = {
-    w: 32,
+    w: 20,
     h: 6
 };
 
@@ -75,6 +75,10 @@ d3.json("js/world-110m2.json", (error, topology) => {
                 return `${fillDots(d.start_jahr)} ${d.start_jahr}-jahr`;
             })
             .on("mouseover", function(d) {
+                const currentColor = d3.select(this).style("fill");
+
+                d3.select(this).style("fill", "black");
+
                 tooltip
                     .style("display", "block")
                     .style("left", d3.event.pageX + "px")
@@ -87,7 +91,11 @@ d3.json("js/world-110m2.json", (error, topology) => {
                 tooltip
                     .select(".tooltip__vorschau")
                     .style("display", function(e) {
-                        if (d.thumbnail === "" || !d.thumbnail) {
+                        if (
+                            d.thumbnail === "" ||
+                            !d.thumbnail ||
+                            !d.thumbnail.match(/jpg/i)
+                        ) {
                             return "none";
                         }
                     });
@@ -116,20 +124,24 @@ d3.json("js/world-110m2.json", (error, topology) => {
                             d.status === "status-saved-danger"
                         ) {
                             return "#e27000";
-                        } else if (d.status === "status-extinct") {
+                        } else {
                             return "#e33632";
                         }
                     });
             })
             .on("mouseout", function(d) {
                 tooltip.style("display", "none");
+                d3.select(this)
+                    .transition()
+                    .style("fill", DotsColorByClass(this.classList))
+                    .duration(1000);
             });
 
         slider.noUiSlider.on("slide", function(values, handle) {
             g.selectAll(".city-dot").attr("display", d => {
                 let displayVal = "block";
 
-                [...range(1919, values[0]), ...range(values[1], 2019)].map(
+                [...range(1920, values[0]), ...range(values[1], 2020)].map(
                     i => {
                         // console.log(d.ende_jahr);
                         if (d.start_jahr === i) {

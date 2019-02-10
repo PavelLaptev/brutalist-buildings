@@ -3,8 +3,8 @@ const gulp = require("gulp"),
     pug = require("gulp-pug"),
     browserSync = require("browser-sync").create(),
     webpack = require("webpack"),
-    gulpWebpack = require("webpack-stream");
-autoprefixer = require("autoprefixer-stylus");
+    gulpWebpack = require("webpack-stream"),
+    autoprefixer = require("autoprefixer-stylus");
 
 gulp.task("gulp-webpack", function() {
     return gulp

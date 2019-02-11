@@ -40,7 +40,7 @@ const svg = d3
 const path = d3.geo.path().projection(projection);
 const g = svg.append("g");
 
-// Rect sizeы
+// Rect size
 const rectSizeOne = {
     w: 20,
     h: 6

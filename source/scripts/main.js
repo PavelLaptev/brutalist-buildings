@@ -3,6 +3,7 @@ import menuActions from "./utils/menuActions";
 import { fillDots, DotsColorByClass } from "./utils/fillDots";
 import { range } from "./utils/generateArray";
 
+// noUI Slider
 const slider = document.querySelector(".slider");
 
 noUiSlider.create(slider, {
@@ -24,6 +25,7 @@ noUiSlider.create(slider, {
     }
 });
 
+// Setup d3 geo
 const projection = d3.geo
     .mercator()
     .center([-20, 45])

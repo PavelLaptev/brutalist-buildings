@@ -78,8 +78,6 @@ d3.json("js/brut-data.json", (error, data) => {
             return `${fillDots(d.start_jahr)} ${d.start_jahr}-jahr`;
         })
         .on("mouseover", function(d) {
-            const currentColor = d3.select(this).style("fill");
-
             d3.select(this).style("fill", "black");
 
             tooltip
@@ -156,14 +154,10 @@ d3.json("js/brut-data.json", (error, data) => {
 
 // zoom and pan
 const zoom = d3.behavior.zoom().on("zoom", () => {
-    // Scale attr adding
+    // Add scale attr
     g.attr(
         "transform",
-        "translate(" +
-            d3.event.translate.join(",") +
-            ")scale(" +
-            d3.event.scale +
-            ")"
+        `translate(${d3.event.translate.join(",")}) scale(${d3.event.scale})`
     );
 
     // Scale dots and lines to the certain scale value

@@ -216,7 +216,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .noUi-horizontal .noUi-handle:after {
   position: absolute;
-  bottom: -12px;
+  bottom: -11px;
   left: 50%;
   -webkit-transform: translateX(-50%) rotate(45deg);
           transform: translateX(-50%) rotate(45deg);

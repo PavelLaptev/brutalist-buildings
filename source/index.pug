@@ -46,4 +46,11 @@ html(lang="en")
             #map
 
     script(src="js/main.bundle.js")
+    // Google Analitics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-132685793-2')
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132685793-2');
     
